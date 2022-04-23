@@ -221,6 +221,11 @@
      text-transform: uppercase;
  }
 
+ .btn__cart {
+     margin-left: 1em;
+     padding: 0.15em 0.75em;
+ }
+
  /*Footer*/
  footer {
      text-align: center;

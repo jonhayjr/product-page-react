@@ -3,7 +3,7 @@ import {useContext} from 'react';
 import { productContext } from '../context/productContext';
 const CartContainer = () => {
 
-    const {cartItems} = useContext(productContext);
+    const {cartItems, removeFromCart} = useContext(productContext);
 
     const getDollarAmount = (amount) => {
         return amount ? `$${amount.toFixed(2).toLocaleString()}` : '';
@@ -30,12 +30,13 @@ const CartContainer = () => {
                             </div>
                             <p>{getDollarAmount(item.price)}</p>
                         </div>
+                        <button className="btn btn__cart" onClick={() => {removeFromCart(item.id)}}>Remove From Cart</button>
                         <hr/>
                     </div>
                 ))
             }
             <div className="cart-flex">
-                <p className="cart__total">Total</p>
+                {getTotal() && <p className="cart__total">Total</p>}
                 <p>{getTotal()}</p>
             </div>
         </div>
