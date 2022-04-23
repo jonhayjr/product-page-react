@@ -5,7 +5,7 @@ const productContext = React.createContext();
 const {Provider, Consumer} = productContext;
 
 const ProductProvider = (props) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(JSON.parse(localStorage.getItem('products')) || []);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ const ProductProvider = (props) => {
     .then(data => {
       const newData = data.map(d => ({...d, inCart: false}))
       setProducts(newData);
+      localStorage.setItem('products', JSON.stringify(newData))
       setIsLoading(false);
     })
   }, [])

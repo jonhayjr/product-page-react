@@ -5,10 +5,11 @@ import Cart from './pages/Cart'
 
 import Header from './components/Header';
 import Product from './pages/Product';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <div>
+    <div className="layout">
       <Header/>
       <div className="main-container">
         <Routes>
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="product/:productId" element={<Product/>}/>
           </Routes>
         </div>
+        <Footer/>
     </div>
   );
 }

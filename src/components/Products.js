@@ -13,9 +13,12 @@ const Products = () => {
         <>
              {isLoading
              ? <p className="loading">Loading...</p>
-             : <div className="grid-container">
+             : <>
+                <h2 className="home-title">Products</h2>
+                <div className="grid-container">
                     {ProductElements}
                 </div>
+                </>
              }
              </>
     )
