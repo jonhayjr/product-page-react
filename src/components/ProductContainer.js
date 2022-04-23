@@ -3,7 +3,7 @@ import { productContext } from '../context/productContext';
 
 import Product from './Product';
 
-const Products = () => {
+const ProductContainer = () => {
     const {products, isLoading} = useContext(productContext);
 
     const ProductElements = products.map(product => (
@@ -24,4 +24,4 @@ const Products = () => {
     )
 }
 
-export default Products;
+export default ProductContainer;

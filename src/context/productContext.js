@@ -6,6 +6,7 @@ const {Provider, Consumer} = productContext;
 
 const ProductProvider = (props) => {
   const [products, setProducts] = useState(JSON.parse(localStorage.getItem('products')) || []);
+  const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cartItems')) || []);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -20,8 +21,24 @@ const ProductProvider = (props) => {
     })
   }, [])
 
+  const addToCart = (item) => {
+    setCartItems(prevItems => {
+      const newItems = [...prevItems, item];
+      localStorage.setItem('cartItems', JSON.stringify(newItems))
+      return newItems;
+    })
+  }
+
+  const removeFromCart = (id) => {
+    setCartItems(prevItems => {
+      const newItems = prevItems.filter(item => item.id !== id);
+      localStorage.setItem('cartItems', JSON.stringify(newItems))
+      return [...newItems];
+    })
+  }
+
   return (
-    <Provider value={{products, isLoading}}>
+    <Provider value={{products, isLoading, cartItems, addToCart, removeFromCart}}>
       {props.children}
     </Provider>
   )
