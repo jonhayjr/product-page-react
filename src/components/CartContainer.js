@@ -30,7 +30,7 @@ const CartContainer = () => {
                             </div>
                             <p>{getDollarAmount(item.price)}</p>
                         </div>
-                        <button className="btn btn__cart" onClick={() => {removeFromCart(item.id)}}>Remove From Cart</button>
+                        <button className="btn btn__cart" onClick={() => {removeFromCart(item)}}>Remove From Cart</button>
                         <hr/>
                     </div>
                 ))

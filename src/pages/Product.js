@@ -29,7 +29,7 @@ const Product = () => {
                 <button disabled={parseInt(params.productId) === 1} onClick={getPrevious} className="btn">Previous</button>
                 <button disabled={parseInt(params.productId) === products.length} className="btn" onClick={getNext}>Next</button>
             </div>
-            <ProductDetail id={params.productId}/>
+            <ProductDetail id={params.productId} />
         </>
     )
 }

@@ -21,17 +21,33 @@ const ProductProvider = (props) => {
     })
   }, [])
 
+ 
   const addToCart = (item) => {
-    setCartItems(prevItems => {
-      const newItems = [...prevItems, item];
+
+    setProducts(prevItems => {
+      const newItems = prevItems.map(i => ( i.id === item.id ? item : i));
+
+      localStorage.setItem('products', JSON.stringify(newItems))
+      return newItems;
+    })
+
+    setCartItems(prevCartItems => {
+      const newItems = [...prevCartItems, item]
       localStorage.setItem('cartItems', JSON.stringify(newItems))
       return newItems;
     })
   }
 
-  const removeFromCart = (id) => {
-    setCartItems(prevItems => {
-      const newItems = prevItems.filter(item => item.id !== id);
+  const removeFromCart = (item) => {
+    setProducts(prevItems => {
+      const newItems = prevItems.map(i => ( i.id === item.id ? item : i));
+      localStorage.setItem('products', JSON.stringify(newItems))
+      return [...newItems]
+    })
+
+
+    setCartItems(prevCartItems => {
+      const newItems = prevCartItems.filter(i => ( i.id !== item.id));
       localStorage.setItem('cartItems', JSON.stringify(newItems))
       return [...newItems];
     })
@@ -44,4 +60,4 @@ const ProductProvider = (props) => {
   )
 }
 
-export {ProductProvider, productContext}
+export {ProductProvider, productContext, Consumer}
