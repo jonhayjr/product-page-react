@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 import { productContext } from '../context/productContext';
 
 const Product = (props) => {
-    const [inCart, setInCart] = useState(false);
+
+    const [inCart, setInCart] = useState(props.data.inCart || false);
 
     const {addToCart, removeFromCart} = useContext(productContext);
 
