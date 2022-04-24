@@ -14,9 +14,8 @@ const ProductProvider = (props) => {
     fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(data => {
-      const newData = data.map(d => ({...d, inCart: false}))
-      setProducts(newData);
-      localStorage.setItem('products', JSON.stringify(newData))
+      setProducts(data);
+      localStorage.setItem('products', JSON.stringify(data))
       setIsLoading(false);
     })
   }, [])
