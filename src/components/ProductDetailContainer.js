@@ -28,7 +28,6 @@ const ProductDetailContainer = () => {
         return currentProduct
     }
 
-
     return (
         <div className="main-container">
             <div className="btn-group">

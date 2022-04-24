@@ -23,35 +23,16 @@ const ProductProvider = (props) => {
 
  
   const addToCart = (item) => {
-
-  const alreadyInCart = cartItems.find(i => item.id === i.id);
-
-  if (!alreadyInCart) {
-    setProducts(prevItems => {
-      const newItems = prevItems.map(i => ( i.id === item.id ? item : i));
-
-      localStorage.setItem('products', JSON.stringify(newItems))
-      return newItems;
-    })
-
     setCartItems(prevCartItems => {
       const newItems = [...prevCartItems, item]
       localStorage.setItem('cartItems', JSON.stringify(newItems))
       return newItems;
     })
   }
-  }
 
-  const removeFromCart = (item) => {
-    setProducts(prevItems => {
-      const newItems = prevItems.map(i => ( i.id === item.id ? item : i));
-      localStorage.setItem('products', JSON.stringify(newItems))
-      return [...newItems]
-    })
-
-
-    setCartItems(prevCartItems => {
-      const newItems = prevCartItems.filter(i => ( i.id !== item.id));
+  const removeFromCart = (id) => {
+  setCartItems(prevCartItems => {
+      const newItems = prevCartItems.filter(i => ( i.id !== id));
       localStorage.setItem('cartItems', JSON.stringify(newItems))
       return [...newItems];
     })

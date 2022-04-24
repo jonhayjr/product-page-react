@@ -54,9 +54,9 @@
     grid-area: main;
     padding-right: 1em;
     padding-left: 1em;
-    overflow: scroll;
     margin-bottom: 8em;
- }
+    overflow: scroll;
+ }  
 
  /*Layout*/
 
@@ -158,7 +158,7 @@
      max-width: 350px;
      margin-left: auto;
      margin-right: auto;
-     height: 750px;
+     height: 650px;
      justify-content: space-around;
      margin-bottom: 10em;
  }

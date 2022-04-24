@@ -6,9 +6,6 @@ import ProductItem from './ProductItem';
 const ProductItemContainer = () => {
     const {products, isLoading} = useContext(productContext);
 
-    const ProductElements = products.map(product => (
-        <ProductItem key={product.id} data={product}/>
-    ))
     return (
         <div className="main-container">
              {isLoading
@@ -16,7 +13,9 @@ const ProductItemContainer = () => {
              : <>
                 <h2 className="home-title">Products</h2>
                 <div className="grid-container">
-                    {ProductElements}
+                    {products.map(product => (
+                    <ProductItem key={product.id} data={product}/>
+                    ))}
                 </div>
                 </>
              }
