@@ -23,13 +23,19 @@ const Product = () => {
         navigate(`/product/${nextId}`);
     }
 
+    const getCurrentProduct = () => {
+        const currentProduct = products.find(product => product.id === parseInt(params.productId));
+        console.log(currentProduct)
+        return currentProduct
+    }
+
     return (
         <div className="main-container">
             <div className="btn-group">
                 <button disabled={parseInt(params.productId) === 1} onClick={getPrevious} className="btn">Previous</button>
                 <button disabled={parseInt(params.productId) === products.length} className="btn" onClick={getNext}>Next</button>
             </div>
-            <ProductDetail id={params.productId} />
+            <ProductDetail currentProduct={getCurrentProduct()}/>
         </div>
     )
 }
