@@ -24,6 +24,9 @@ const ProductProvider = (props) => {
  
   const addToCart = (item) => {
 
+  const alreadyInCart = cartItems.find(i => item.id === i.id);
+
+  if (!alreadyInCart) {
     setProducts(prevItems => {
       const newItems = prevItems.map(i => ( i.id === item.id ? item : i));
 
@@ -36,6 +39,7 @@ const ProductProvider = (props) => {
       localStorage.setItem('cartItems', JSON.stringify(newItems))
       return newItems;
     })
+  }
   }
 
   const removeFromCart = (item) => {
@@ -51,6 +55,7 @@ const ProductProvider = (props) => {
       localStorage.setItem('cartItems', JSON.stringify(newItems))
       return [...newItems];
     })
+
   }
 
   return (
