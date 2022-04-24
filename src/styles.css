@@ -55,7 +55,7 @@
     padding-right: 1em;
     padding-left: 1em;
     margin-bottom: 8em;
-    overflow: scroll;
+    overflow-y: scroll;
  }  
 
  /*Layout*/
