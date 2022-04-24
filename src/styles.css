@@ -53,7 +53,7 @@
 
 .main-container {
     grid-area: main;
-    width: 90%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
  }
@@ -62,6 +62,7 @@
 
  /*Header*/
  .layout {
+     width: 100%;
      display: grid;
      grid-template-rows: auto 1fr auto;
      grid-template-areas: "header header header"
@@ -87,12 +88,6 @@
     justify-content: space-between;
  }
 
- .container {
-     width: 90%;
-     margin-left: auto;
-     margin-right: auto;
- }
-
  /*Nav*/
  .nav__link {
      cursor: pointer;
@@ -104,12 +99,17 @@
  }
 
  /*Products*/
+.product-container {
+    padding: 1em;
+}
+
  .grid-container {
      display: grid;
+     max-width: 850px;
+     overflow: hidden;
      margin-right: auto;
      margin-left: auto;
      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-     grid-template-rows: auto;
      grid-gap: 10px;
      margin-bottom: 10em;
      justify-content: center;
@@ -154,6 +154,10 @@
  }
 
  /*Product Detail*/
+ .card-detail-container {
+     padding: 1em;
+ }
+
  .card__detail {
      margin-top: 1em;
      padding: 1em;

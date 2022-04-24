@@ -11,13 +11,11 @@ const App = () => {
   return (
     <div className="layout">
       <Header/>
-      <div className="main-container">
         <Routes>
             <Route index element={<Home/>}/>
             <Route path="cart" element={<Cart/>}/>
             <Route path="product/:productId" element={<Product/>}/>
-          </Routes>
-        </div>
+        </Routes>
         <Footer/>
     </div>
   );

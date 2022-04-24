@@ -25,7 +25,7 @@ const ProductDetail = (props) => {
     }
 
     return ( 
-        <>  
+        <div className="card-detail-container">  
         {currentProduct ?
             <div className="card card__detail">
                 <h3 className="card__title">{currentProduct.title}</h3>
@@ -36,7 +36,7 @@ const ProductDetail = (props) => {
             </div>
             : ''
         }
-        </>
+        </div>
     )
 }
 

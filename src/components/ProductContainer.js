@@ -10,7 +10,7 @@ const ProductContainer = () => {
         <Product key={product.id} data={product}/>
     ))
     return (
-        <>
+        <div className="product-container">
              {isLoading
              ? <p className="loading">Loading...</p>
              : <>
@@ -20,7 +20,7 @@ const ProductContainer = () => {
                 </div>
                 </>
              }
-             </>
+             </div>
     )
 }
 

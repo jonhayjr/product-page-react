@@ -2,7 +2,7 @@ import ProductContainer from "../components/ProductContainer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="main-container">
       <ProductContainer/>
     </div>
   )
