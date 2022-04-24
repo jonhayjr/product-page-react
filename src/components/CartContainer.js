@@ -18,8 +18,8 @@ const CartContainer = () => {
     }
 
     return (
-        <div className="cart-container">
-            <h1 className="cart-heading">Cart</h1>
+        <div className="main-container">
+            <h2 className="cart-heading">Cart</h2>
             {
                 cartItems.map(item => (
                     <div key={item.id}>

@@ -20,7 +20,7 @@ const ProductDetail = ({currentProduct}) => {
     }
 
     return ( 
-        <div className="card-detail-container">  
+        <div>  
         {currentProduct ?
             <div className="card card__detail">
                 <h3 className="card__title">{currentProduct.title}</h3>

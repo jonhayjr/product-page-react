@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 const Header = () => {
     return (
         <header>
-            <div className="container flex-nav">
+            <div className="flex-nav">
                 <h1 className="logo">JH Inc</h1>
                 <Navbar/>
             </div>

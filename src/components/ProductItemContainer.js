@@ -3,14 +3,14 @@ import { productContext } from '../context/productContext';
 
 import ProductItem from './ProductItem';
 
-const ProductContainer = () => {
+const ProductItemContainer = () => {
     const {products, isLoading} = useContext(productContext);
 
     const ProductElements = products.map(product => (
         <ProductItem key={product.id} data={product}/>
     ))
     return (
-        <div className="product-container">
+        <div className="main-container">
              {isLoading
              ? <p className="loading">Loading...</p>
              : <>
@@ -24,4 +24,4 @@ const ProductContainer = () => {
     )
 }
 
-export default ProductContainer;
+export default ProductItemContainer;

@@ -1,10 +1,8 @@
-import ProductContainer from "../components/ProductContainer";
+import ProductItemContainer from "../components/ProductItemContainer";
 
 const Home = () => {
   return (
-    <div className="main-container">
-      <ProductContainer/>
-    </div>
+      <ProductItemContainer/>
   )
 }
 
